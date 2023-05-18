@@ -1,0 +1,17 @@
+env: "production"
+
+builtin: true
+
+api:
+  port: 9002
+
+schedulers:
+  - job: "dxxx-15-minute"
+    cron: "*/15 * * * *"
+    task:
+      url: "http://xxx-svc:9002/v1/device/yyy"
+      method: "POST"
+      body: >
+        {"data": "every-5-minute"}
+      header: >
+        {"X-Api-Key": "XXX"}

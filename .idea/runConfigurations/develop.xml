@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="develop" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="smart-schedule" />
+    <working_directory value="$PROJECT_DIR$" />
+    <parameters value="-env development" />
+    <kind value="PACKAGE" />
+    <package value="tdg.com/tdg/smart-schedule/cmd/smart-schedule" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$/cmd/smart-schedule/main.go" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -6,12 +6,23 @@ api:
   port: 9002
 
 schedulers:
-  - job: "dxxx-15-minute"
-    cron: "*/15 * * * *"
+  - job: "generate energy data daily at (00:10)"
+    cron: "10 0 * * *"
     task:
-      url: "http://xxx-svc:9002/v1/device/yyy"
+      url: "http://core-api-svc:9001/v1/device_output/generate/energy/daily"
       method: "POST"
       body: >
-        {"data": "every-5-minute"}
-      header: >
-        {"X-Api-Key": "XXX"}
+        {"storeId": 0,"day": 0}
+      # header: >
+      #   {"X-Api-Key": "XXX"}
+
+  - job: "generate energy data monthly at (00:40)"
+    cron: "40 0 * * *"
+    task:
+      url: "http://core-api-svc:9001/v1/device_output/generate/energy/monthly"
+      method: "POST"
+      body: >
+        {"storeId": 0,"day": 0}
+      # header: >
+      #   {"X-Api-Key": "XXX"}
+

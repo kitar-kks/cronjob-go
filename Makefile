@@ -11,10 +11,10 @@ prod:
 # How to run:
 # make image
 image-prod:
-	docker build --platform linux/x86_64 -f deployments/Dockerfile -t xxx/smart-schedule .
+	docker build --platform linux/x86_64 -f deployments/Dockerfile -t tdg-prod/smart-schedule .
 
 # make deploy-prod
 deploy-prod:
 	make image-prod
-	docker tag $(docker images -q xxx/smart-schedule) xxx::latest
-	docker push xxx::latest
+	docker tag $(docker images -q tdg-prod/smart-schedule) registry-intl.ap-southeast-1.aliyuncs.com/lotuss/cronjob:latest
+	docker push registry-intl.ap-southeast-1.aliyuncs.com/lotuss/cronjob:latest

@@ -6,8 +6,8 @@ api:
   port: 9002
 
 schedulers:
-  - job: 'generate energy data daily at (07:25)'
-    cron: '25 7 * * *'
+  - job: 'generate energy data daily at (07:30)'
+    cron: '30 7 * * *'
     task:
       url: 'http://energy_core:9001/api/v1/device_output/generate/energy/daily'
       method: 'POST'
@@ -16,8 +16,8 @@ schedulers:
       # header: >
       #   {"X-Api-Key": "XXX"}
 
-  - job: 'generate energy data monthly at (08:05)'
-    cron: '5 8 * * *'
+  - job: 'generate energy data monthly at (07:55)'
+    cron: '55 7 * * *'
     task:
       url: 'http://energy_core:9001/api/v1/device_output/generate/energy/monthly'
       method: 'POST'
